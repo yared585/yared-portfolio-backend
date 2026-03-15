@@ -8,11 +8,7 @@ connectDB();
 
 const app = express();
 
-const allowedOrigins = [
-  'http://localhost:4200',
-  'https://yared-portfolio-angular.vercel.app'
-];
-app.use(cors({ origin: allowedOrigins }));
+app.use(cors());
 app.use(express.json());
 
 // Public auth route
