@@ -19,12 +19,14 @@ app.use('/api/skills',         require('./routes/skills'));
 app.use('/api/experiences',    require('./routes/experiences'));
 app.use('/api/education',      require('./routes/education'));
 app.use('/api/certifications', require('./routes/certifications'));
+app.use('/api/projects',       require('./routes/projects'));
 
 // Protected mutation routes (POST, PUT, DELETE)
 app.use('/api/admin/skills',         protect, require('./routes/skills'));
 app.use('/api/admin/experiences',    protect, require('./routes/experiences'));
 app.use('/api/admin/education',      protect, require('./routes/education'));
 app.use('/api/admin/certifications', protect, require('./routes/certifications'));
+app.use('/api/admin/projects',       protect, require('./routes/projects'));
 
 app.use((req, res) => {
   res.status(404).json({ message: 'Route not found' });
